@@ -8,6 +8,9 @@ $(TARGET): backfinder.c
 	$(CC) $(CFLAGS) backfinder.c -o $(TARGET)
 
 
+tag: tagfinder.c
+	$(CC) $(CFLAGS) tagfinder.c -o tagfinder
+
 .PHONY: run clean
 
 run: $(TARGET)

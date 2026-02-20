@@ -1,3 +1,11 @@
+/*
+ * Functions (?):
+ *    - call backfinder
+ *    - call nvim on a file
+ *    - show menu
+ *    - parse yaml files
+ **/
+
 #include <assert.h>
 #include <dirent.h>
 #include <errno.h>
