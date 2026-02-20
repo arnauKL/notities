@@ -5,7 +5,6 @@
 
 #include <errno.h>
 #include <fcntl.h> //open
-#include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -42,14 +41,12 @@ main(int argc, char **argv)
 
     int bytes_read = 0;
     errno = 0;
-    bool inside_tag = false;
 
     int depth = 0; // number of closing brackets found
 
     while ((bytes_read = read(file_descriptor, buffer, sizeof(buffer))) > 0) {
 
         for (int i = 0; i < bytes_read; i++) {
-
             if (depth == 2) {
                 if (buffer[i] != ']') {
                     printf("%c", buffer[i]);
@@ -64,8 +61,8 @@ main(int argc, char **argv)
             }
         }
     }
-
     printf("\n");
+
     if (depth != 0) {
         printf("Wrong syntax\n");
     }
